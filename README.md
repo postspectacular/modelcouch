@@ -1,6 +1,6 @@
 # modelcouch
 
-A Clojure CRUD function generator for a given document model spec and CouchDB ([clutch](https://github.com/clojure-clutch/clutch)) connection URL.
+A Clojure CRUD function generator for a given document model spec and CouchDB ([clutch](http://github.com/clojure-clutch/clutch)) connection URL.
 
 The following functions (incl. documentation) are created in the calling namespace:
 
@@ -28,7 +28,7 @@ The spec also supports the following lifecycle hooks:
 
 ## Usage
 
-Using [leiningen](), add the following dependencies to your project:
+Using [leiningen](http://github.com/technomancy/leiningen), add the following dependencies to your project:
 
 ```
 [com.postspectacular/modelcouch "0.1.0"]
@@ -76,7 +76,12 @@ The example below defines a simple user entity and uses some features of [Noir](
 To use the generated functions:
 
 ```clojure
-(def toxi (make-user :username "toxi" :name "Karsten Schmidt" :email "me@nospam.com" :password "fooyakasha"))
+(def toxi
+  (make-user :username "toxi"
+             :name "Karsten Schmidt"
+             :email "me@nospam.com"
+             :password "fooyakasha"))
+
 (valid-user? toxi)
 (put-user toxi)
 ```
